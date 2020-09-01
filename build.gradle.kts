@@ -77,6 +77,10 @@ tasks {
         kotlinOptions.jvmTarget = "1.8"
     }
 
+    compileTestKotlin {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+
     jacocoTestReport {
         reports {
             xml.isEnabled = true
