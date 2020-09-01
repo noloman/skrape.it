@@ -73,6 +73,10 @@ tasks {
         options.encoding = "UTF-8"
     }
 
+    compileKotlin {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+
     jacocoTestReport {
         reports {
             xml.isEnabled = true
@@ -87,9 +91,9 @@ tasks {
             events("passed", "skipped", "failed")
         }
         systemProperties = mapOf(
-                "junit.jupiter.execution.parallel.enabled" to true,
-                "junit.jupiter.execution.parallel.mode.default" to "concurrent",
-                "junit.jupiter.execution.parallel.mode.classes.default" to "concurrent"
+            "junit.jupiter.execution.parallel.enabled" to true,
+            "junit.jupiter.execution.parallel.mode.default" to "concurrent",
+            "junit.jupiter.execution.parallel.mode.classes.default" to "concurrent"
         )
         finalizedBy(jacocoTestReport)
     }
@@ -99,7 +103,8 @@ tasks {
         gradleReleaseChannel = "current"
 
         rejectVersionIf {
-            val isFlaggedAsNonStable = listOf("alpha", "beta", "RC", "rc", "dev").any { candidate.version.contains(it) }.not()
+            val isFlaggedAsNonStable =
+                listOf("alpha", "beta", "RC", "rc", "dev").any { candidate.version.contains(it) }.not()
             val isSemanticVersion = "^[0-9,.v-]+(-r)?$".toRegex().matches(candidate.version)
             (isFlaggedAsNonStable || isSemanticVersion).not()
         }
