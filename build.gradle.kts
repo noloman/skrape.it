@@ -10,7 +10,7 @@ plugins {
     id("se.patrikerdes.use-latest-versions") version "0.2.14"
     id("com.github.ben-manes.versions") version "0.29.0"
     id("com.adarshr.test-logger") version "2.1.0"
-    id("io.gitlab.arturbosch.detekt") version "1.10.0"
+    id("io.gitlab.arturbosch.detekt") version "1.12.0"
     id("com.vanniktech.maven.publish") version "0.12.0"
 }
 
@@ -28,11 +28,11 @@ repositories {
 dependencies {
     val kotlinVersion = "1.4.0"
     val jsoupVersion = "1.13.1"
-    val htmlUnitVersion = "2.42.0"
-    val striktVersion = "0.26.1"
+    val htmlUnitVersion = "2.43.0"
+    val striktVersion = "0.27.0"
     val kohttpVersion = "0.12.0"
 
-    val junitVersion = "5.6.2"
+    val junitVersion = "5.7.0-M1"
     val testContainersVersion = "1.14.3"
     val wireMockVersion = "2.27.1"
     val mockkVersion = "1.10.0"
